@@ -12966,7 +12966,7 @@ Sidebar
   
   
 }
-.circle-box {
+.circle-box{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12992,8 +12992,6 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
 
 .circle-box h3{
   color: #F94A29;
-  
-  
   font-weight: bolder;
   font-size: 3rem;
   -webkit-text-stroke: 1px black;
