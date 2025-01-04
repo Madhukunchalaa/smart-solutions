@@ -438,6 +438,7 @@ figure.image {
   font-weight: 500;
   line-height: 26px;
   text-transform: capitalize;
+  text-align: left;
 }
 
 .color1 {
@@ -12945,47 +12946,60 @@ Sidebar
 .hero{
   height: 100vh;
   width: 100%;
+  background-image: url('/assets/images/bw.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+  display: flex;
+  align-items: end;
+  justify-content: start;
+  
   
 }
-.hero-right{
+.right{
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
   flex-direction: column;
   
-}
-.hero-right h1{
-  font-size: 100px;
-}
-.hero-btn{
-  display: flex;
   
-  gap: 2em;
 }
-.hero-btn .btn {
-  background-color: var(--theme-color1);
-  border-radius: 0;
-  font-weight: 600;
-  color: var(--theme-color-light);
-  display: inline-block;
-  padding: 0 60px;
-  height: 70px;
-  line-height: 70px;
-  font-size: 16px;
-  font-family: var(--title-font2);
-  position: relative;
-  border: 0;
-  z-index: 9;
-  overflow: hidden;
-  border-radius: 50px;
+.circle-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  border-radius: 50%; /* Circular shape */
+  
+  height: 80vh;
+  width: 80vh; /* Ensures a perfect circle */
+  /* border: 3px solid #F94A29; */
+  position: relative; /* Ensure positioning for pseudo-element */
+  overflow: hidden; /* Prevent content from overflowing outside the circle */
+  color: white;
+  background: none; /* Remove direct background image from this element */
+  background: rgba( 255, 255, 255, 0.1 );
+box-shadow: 0 8px 32px 0 rgba( 249, 74, 1, 0.37 );
+backdrop-filter: blur( 2px );
+-webkit-backdrop-filter: blur( 1px );
+
+/* border: 1px solid rgba( 249, 74, 41, 1.18 ); */
 }
 
-.hero-btn .btn:hover {
-  background-color: #202020; /* Darker shade on hover for effect */
-  border-color: #fff; /* Contrasting border on hover */
-  color: #F94B2A; /* Text color changes for impact */
-  transform: scale(1.05); /* Subtle enlargement on hover */
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Increased shadow for hover */
+
+.circle-box h3{
+  color: #F94A29;
+ font-weight: bolder;
+ font-size: 3rem;
 }
+
+
+
+
+
+
+
+
