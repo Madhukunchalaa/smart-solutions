@@ -1540,7 +1540,7 @@ Main Header
   display: block;
 }
 .main-header .logo img {
-  max-width: 100%;
+  max-width: 150px;
   height: auto;
 
 }
@@ -1898,7 +1898,7 @@ Main Header
 .header-style-one .header-lower .main-menu .navigation > li > a {
 color: black;
   font-size: 15px;
-  font-weight: 500;
+  font-weight: bold;
   font-family: var(--text-font);
 }
 .header-style-one .header-lower .main-menu .navigation > li > a:hover {
@@ -3485,7 +3485,7 @@ Section Title
 ***/
 .about-section {
   position: relative;
-  padding: 120px 0;
+  padding: 35px 0;
   background-image: url(../images/background/about-bg.jpg);
   -o-object-fit: cover;
      object-fit: cover;
@@ -4006,7 +4006,7 @@ Section Title
 }
 .about-block-two .inner-box i {
   position: absolute;
-  top: 40px;
+  top: 22px;
   left: 30px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -4085,7 +4085,7 @@ Section Title
 ***/
 .service-section {
   position: relative;
-  padding: 120px 0 90px;
+  padding: 0px 0 90px;
   background-image: url(../images/background/bg1-1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -5007,7 +5007,7 @@ Section Title
 ***/
 .testimonial-section-two {
   position: relative;
-  padding: 120px 0 158px;
+  padding: 45px 0 158px;
 }
 .testimonial-section-two .inner-container {
   max-width: 1000px;
@@ -7700,7 +7700,7 @@ Section Title
 ***/
 .why-choose-us-two {
   position: relative;
-  padding: 120px 0;
+  padding: 20px 0;
   background-color: var(--theme-color-dark);
 }
 .why-choose-us-two .image-column .inner-column {
@@ -12944,20 +12944,30 @@ Sidebar
   background-color: #fff;
   height: 180px;
 }
-.hero{
+.hero {
   height: 100vh;
   width: 100%;
-  background-image: url('../images/bw.jpg');
-  background-size: cover;
+  background-image: url('../images/homepage.png');
+  background-size: 110%; /* Start slightly zoomed-in */
   background-repeat: no-repeat;
   background-position: center;
-  object-fit: cover;
   display: flex;
   align-items: end;
   justify-content: start;
-  
-  
+  animation: zoomIn 5s ease-in-out infinite; /* Add animation */
 }
+
+/* Keyframes for zoom-in effect */
+@keyframes zoomIn {
+  0% {
+    background-size: 110%; 
+  }
+  50% {
+    background-size: 100%; 
+  }
+
+}
+
 .right{
   height: 100vh;
   display: flex;
@@ -13054,7 +13064,7 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
 .section-title {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-top: -160px;
   color: #333;
 }
 .section-description {
