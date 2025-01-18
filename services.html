@@ -158,17 +158,38 @@
 	<!--End Main Header -->
 
 	<!-- Start main-content -->
-	<section class="page-title" style="background-image: url(images/background/page-title-bg.png);">
-		<div class="auto-container">
-			<div class="title-outer text-center">
-				<h1 class="title">Services</h1>
-				<ul class="page-breadcrumb">
-					<li><a href="index.html">Home</a></li>
-					<li>Services</li>
-				</ul>
-			</div>
-		</div>
-	</section>
+	<div class="container-fluid service">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 hero-left">
+          <div class="animated-box">
+            <h2 class="title">Innovative Solutions, Exceptional Results</h2>
+            <p>Explore our expertise across diverse services.</p>
+            <div class="line vertical left"></div>
+            <div class="line vertical right"></div>
+            <div class="line horizontal top"></div>
+            <div class="line horizontal bottom"></div>
+        </div>
+        <div class="btn">
+          <a href="contact.html" class="meet">Contact Us</a>
+        </div>
+
+        </div>
+        <div class="col-md-6 hero-right">
+          <div class="service-image">
+            <img src="assets/images/service1.png" alt="">
+            <img src="assets/images/service2.png" alt="">
+            <img src="assets/images/service3.png" alt="">
+          </div>
+        </div>
+        
+        
+      </div>
+     
+     
+      </div>
+
+  </div>
 	<!-- end main-content -->
 
 	<!-- Service section Four -->
@@ -375,6 +396,30 @@
     <script src="assets/js/mixitup.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/jquery.js"></script>
+    <script>
+   const images = document.querySelectorAll(".service-image img");
+let currentIndex = 0;
+
+function changeImage() {
+  const currentImage = images[currentIndex];
+  currentImage.classList.remove("active");
+  currentImage.classList.add("exit");
+
+  currentIndex = (currentIndex + 1) % images.length;
+  const nextImage = images[currentIndex];
+  nextImage.classList.remove("exit");
+  nextImage.classList.add("active");
+}
+
+// Start with the first image visible
+images[0].classList.add("active");
+
+setInterval(changeImage, 3000); // Change every 3 seconds
+
+
+    </script>
+    
+
 </body>
 
 </html>

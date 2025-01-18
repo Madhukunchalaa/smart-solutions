@@ -3,111 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Animated Box</title>
     <style>
-       .animated-box {
-  position: relative;
-  width: 300px; /* Adjust width */
-  height: 150px; /* Adjust height */
-  margin: 50px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .animated-box {
+            position: relative;
+            width: 300px;
+            height: 150px;
+            margin: 50px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.animated-box h2 {
-  position: absolute;
-  font-size: 24px;
-  color: #333;
-  opacity: 0; /* Hidden initially */
-  animation: fade-in 0.5s ease-in-out forwards 2s; /* Fade in after the animation */
-}
+        .animated-box h2 {
+            position: absolute;
+            font-size: 24px;
+            color: #333;
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards 2.5s; /* Starts after all lines animate */
+        }
 
-/* Common styles for lines */
-.line {
-  position: absolute;
-  background: #333; /* Line color */
-}
+        .line {
+            position: absolute;
+            background: #333;
+        }
 
-/* Vertical lines */
-.vertical {
-  width: 3px;
-  height: 100%;
-}
+        .vertical {
+            width: 3px;
+            height: 100%;
+        }
 
-.left {
-  left: 0;
-  animation: left-line-move 2s ease-in-out forwards;
-}
+        .horizontal {
+            height: 3px;
+            width: 0%; /* Start from 0 width */
+        }
 
-.right {
-  right: 0;
-  animation: right-line-move 2s ease-in-out forwards;
-}
+        .left {
+            left: 0;
+            animation: vertical-line-left-to-right 1s ease-in-out forwards;
+        }
 
-/* Horizontal lines */
-.horizontal {
-  height: 3px;
-  width: 0%; /* Start from 0 width */
-  animation: horizontal-line-grow 1s ease-in-out forwards;
-}
+        .right {
+            right: 0;
+            animation: vertical-line-right-to-left 1s ease-in-out forwards;
+        }
 
-.top {
-  top: 0;
-  animation-delay: 2s;
-}
+        .top {
+            top: 0;
+            animation: horizontal-line-left-to-right 1s ease-in-out forwards 1.2s; /* Delayed slightly */
+        }
 
-.bottom {
-  bottom: 0;
-  animation-delay: 3s;
-}
+        .bottom {
+            bottom: 0;
+            animation: horizontal-line-right-to-left 1s ease-in-out forwards 1.2s; /* Starts with the top line */
+        }
 
-/* Keyframes */
+        /* Keyframes */
+        @keyframes vertical-line-left-to-right {
+            0% { left: 0; }
+            100% { left: 100%; }
+        }
 
-/* Left vertical line moves to the right after collision */
-@keyframes left-line-move {
-  0% {
-    left: 0;
-  }
-  50% {
-    left: 50%; /* Collision point */
-  }
-  100% {
-    left: 100%; /* Moves to the right */
-  }
-}
+        @keyframes vertical-line-right-to-left {
+            0% { right: 0; }
+            100% { right: 100%; }
+        }
 
-/* Right vertical line moves to the left after collision */
-@keyframes right-line-move {
-  0% {
-    right: 0;
-  }
-  50% {
-    right: 50%; /* Collision point */
-  }
-  100% {
-    right: 100%; /* Moves to the left */
-  }
-}
+        @keyframes horizontal-line-left-to-right {
+            0% { width: 0%; left: 0; }
+            100% { width: 100%; left: 0; }
+        }
 
-/* Horizontal lines grow */
-@keyframes horizontal-line-grow {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
+        @keyframes horizontal-line-right-to-left {
+            0% { width: 0%; right: 0; }
+            100% { width: 100%; right: 0; }
+        }
 
-/* Title fades in */
-@keyframes fade-in {
-  to {
-    opacity: 1;
-  }
-}
-
-
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -117,8 +91,6 @@
         <div class="line vertical right"></div>
         <div class="line horizontal top"></div>
         <div class="line horizontal bottom"></div>
-      </div>
-      
-      
+    </div>
 </body>
 </html>

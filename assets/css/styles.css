@@ -12951,10 +12951,14 @@ Sidebar
   background-size: 110%; /* Start slightly zoomed-in */
   background-repeat: no-repeat;
   background-position: center;
+  animation: zoomIn 5s ease-in infinite; /* Add animation */
+}
+.hero-left{
   display: flex;
-  align-items: end;
-  justify-content: start;
-  animation: zoomIn 5s ease-in-out infinite; /* Add animation */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 /* Keyframes for zoom-in effect */
@@ -13060,6 +13064,7 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
 .client-logo img {
   max-width: 100%;
   height: auto;
+ 
 }
 .section-title {
   font-size: 2rem;
@@ -13072,8 +13077,283 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
   color: #555;
   margin-bottom: 40px;
 }
+.animated-box {
+  position: relative;
+  width: 500px;
+  height: 250px;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); /* Start from the left */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+  }
+}
+
+.animated-box h2 {
+  z-index: 1;
+  font-size: 3rem;
+  color: white;
+  opacity: 0; /* Initially hidden */
+  animation: slide-in 1.5s ease-in-out forwards;
+  animation-delay: 0.5s; /* Starts after 2.5 seconds */
+}
+
+@keyframes slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(100px); /* Start from the right */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Move to original position */
+  }
+}
+
+.animated-box p {
+  z-index: 1;
+  color: #F94A29;
+  opacity: 0; /* Initially hidden */
+  animation: slide-in-right 1.5s ease-in-out forwards;
+  animation-delay: 1.5s; /* Starts after 2.5 seconds */
+}
+
+
+.line {
+  position: absolute;
+  background: white;
+}
+
+.vertical {
+  width: 3px;
+  height: 100%;
+}
+
+.horizontal {
+  height: 3px;
+  width: 0%; /* Start from 0 width */
+}
+
+.left {
+  left: 0;
+  animation: vertical-line-left-to-right 1s ease-in-out forwards;
+}
+
+.right {
+  right: 0;
+  animation: vertical-line-right-to-left 1s ease-in-out forwards;
+}
+
+.top {
+  top: 0;
+  animation: horizontal-line-left-to-right 1s ease-in-out forwards 1.2s; /* Delayed slightly */
+}
+
+.bottom {
+  bottom: 0;
+  animation: horizontal-line-right-to-left 1s ease-in-out forwards 1.2s; /* Starts with the top line */
+}
+.meeting-btn{
+  background-color:#F94A29;
+  padding: 0 35px 0 35px;
+  border-radius: 50px; 
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-right{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes fade-in-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes zoom-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.5); /* Starts smaller */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Zooms to normal size */
+  }
+}
+
+.hero-img {
+  padding: 10px;
+  opacity: 0; /* Initially hidden */
+  animation: zoom-in 1.5s ease-in-out forwards;
+  animation-delay: 1s; /* Delay before animation starts */
+}
+
+
+
+
+.meet {
+  background-color: var(--theme-color1);
+  font-weight: 600;
+  color: var(--theme-color-light);
+  display: inline-block;
+  padding: 10px;
+  font-size: 16px;
+  font-family: var(--title-font2);
+  position: absolute;
+  border: 0;
+  z-index: 9;
+  overflow: hidden;
+  border-radius: 50px;
+  margin-top: -6%;
+  margin-left: -15%;
+  opacity: 0;  /* Initially hidden */
+  animation: fade-in 0.5s ease-in-out forwards;
+  animation-delay: 2.5s; /* Delay before animation starts */
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+@keyframes fade-in-move-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to its original position */
+  }
+}
+
+.img-2 {
+  position: relative;
+  margin-top: 4%;
+  margin-left: 12%;
+  z-index: 0;
+  width: 5%;
+  opacity: 0; /* Initially hidden */
+  animation: fade-in-move-up 0.8s ease-in-out forwards;
+  animation-delay: 3.5s; /* Appears after 3.5 seconds */
+}
+
+
+.img-3 {
+  position: relative;
+  margin-top: 8%;
+  margin-left: -8%;
+  width: 4%;
+  animation-delay: 4.5s; /* Appears after 3 seconds */
+}
+.img-4{
+ 
+
+}
 
 
 
 
 
+@keyframes vertical-line-left-to-right {
+  0% { left: 0; }
+  100% { left: 100%; }
+}
+
+@keyframes vertical-line-right-to-left {
+  0% { right: 0; }
+  100% { right: 100%; }
+}
+
+@keyframes horizontal-line-left-to-right {
+  0% { width: 0%; left: 0; }
+  100% { width: 100%; left: 0; }
+}
+
+@keyframes horizontal-line-right-to-left {
+  0% { width: 0%; right: 0; }
+  100% { width: 100%; right: 0; }
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}
+.about{
+ 
+  height: 80vh;
+  background-image: url('/smart solutions/assets/images/Component\ 44.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.contact{
+ 
+  height: 80vh;
+  background-image: url('/smart solutions/assets/images/Component\ 43.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.service{
+  height: 80vh;
+  background-image: url('/smart solutions/assets/images/aboutbanner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.service-image {
+  position: relative;
+  width: 80%;
+  height: 100%;
+  overflow: hidden;
+  margin-top: 70%;
+}
+
+.service-image img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.service-image img.active {
+  opacity: 1;
+  transform: translateX(0); /* Move to visible position */
+}
+
+.service-image img.exit {
+  opacity: 0;
+  transform: translateX(-100%); /* Move off-screen to the left */
+}
