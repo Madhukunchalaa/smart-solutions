@@ -13222,7 +13222,7 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
   padding: 10px;
   font-size: 16px;
   font-family: var(--title-font2);
-  position: absolute;
+
   border: 0;
   z-index: 9;
   overflow: hidden;
