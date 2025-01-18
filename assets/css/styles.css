@@ -13256,29 +13256,7 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
   }
 }
 
-.img-2 {
-  position: relative;
-  margin-top: 4%;
-  margin-left: 12%;
-  z-index: 0;
-  width: 5%;
-  opacity: 0; /* Initially hidden */
-  animation: fade-in-move-up 0.8s ease-in-out forwards;
-  animation-delay: 3.5s; /* Appears after 3.5 seconds */
-}
 
-
-.img-3 {
-  position: relative;
-  margin-top: 8%;
-  margin-left: -8%;
-  width: 4%;
-  animation-delay: 4.5s; /* Appears after 3 seconds */
-}
-.img-4{
- 
-
-}
 
 
 
@@ -13310,7 +13288,7 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
 .about{
  
   height: 80vh;
-  background-image: url('/smart solutions/assets/images/Component\ 44.png');
+  background-image: url('../images/Component\ 44.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -13319,14 +13297,14 @@ border: 1px solid rgba( 249, 74, 41, 1.18 );
 .contact{
  
   height: 80vh;
-  background-image: url('/smart solutions/assets/images/Component\ 43.png');
+  background-image: url('../images/Component\ 43.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
 .service{
   height: 80vh;
-  background-image: url('/smart solutions/assets/images/aboutbanner.png');
+  background-image: url('../images/aboutbanner.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
