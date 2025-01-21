@@ -8534,10 +8534,11 @@ Section Title
 .main-footer .widgets-section {
   position: relative;
   padding: 100px 0 10px;
+
 }
 .main-footer .footer-column {
   position: relative;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 .main-footer .footer-widget {
   position: relative;

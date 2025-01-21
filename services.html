@@ -309,7 +309,7 @@
                     <i class="fa-solid fa-envelope"></i>
                   </div>
                   <span>Mail us</span>
-                  <h6 class="title"><a href="mailto:lakshmi@smartsolutionsdigi.com">lakshmi@smartsolutionsdigi.com
+                  <h6 class="title"><a href="mailto:lakshmi@smartsolutionsdigi.com" style="font-size: 15px;">lakshmi@smartsolutionsdigi.com
 
                   </a></h6>
                 </div>
@@ -381,7 +381,7 @@
     <div class="footer-bottom">
       <div class="auto-container">
         <div class="inner-container">
-          <div class="copyright-text">© Copyright reserved by @smart solutions</div>
+          <div class="copyright-text">© All rights reserved by Smart Solutions</div>
         </div>
       </div>
     </div>
@@ -404,6 +404,28 @@
 <script src="assets/js/script.js"></script>
 <script src="assets/js/jquery.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+<script>
+  const images = document.querySelectorAll(".service-image img");
+let currentIndex = 0;
+
+function changeImage() {
+ const currentImage = images[currentIndex];
+ currentImage.classList.remove("active");
+ currentImage.classList.add("exit");
+
+ currentIndex = (currentIndex + 1) % images.length;
+ const nextImage = images[currentIndex];
+ nextImage.classList.remove("exit");
+ nextImage.classList.add("active");
+}
+
+// Start with the first image visible
+images[0].classList.add("active");
+
+setInterval(changeImage, 3000); // Change every 3 seconds
+
+
+   </script>
 </body>
 </html>
 
