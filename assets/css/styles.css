@@ -6607,7 +6607,7 @@ Section Title
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-     margin: 10%;
+     margin-top: 10%;
 }
 @media (max-width: 991.98px) {
   .faqs-section-two .image-column .inner-column {
