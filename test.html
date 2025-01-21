@@ -1,96 +1,186 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animated Box</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        .animated-box {
+        :root {
+            --theme-color1: #007bff;
+            --theme-color-light: #ffffff;
+            --title-font2: 'Arial', sans-serif;
+        }
+
+        .hero {
+            overflow: hidden;
             position: relative;
-            width: 300px;
-            height: 150px;
-            margin: 50px auto;
+        }
+
+        .hero-left {
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 100vh;
+            padding: 2rem;
         }
 
-        .animated-box h2 {
-            position: absolute;
-            font-size: 24px;
-            color: #333;
-            opacity: 0;
-            animation: fade-in 0.5s ease-in-out forwards 2.5s; /* Starts after all lines animate */
+        .hero-right {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-right img {
+            width: 70%;
+            margin-left: 20%;
+        }
+
+        .animated-box {
+            position: relative;
+            padding: 2rem;
+        }
+
+        .title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: fade-in-move-up 1s ease-out forwards;
         }
 
         .line {
             position: absolute;
-            background: #333;
+            background: var(--theme-color1);
         }
 
         .vertical {
-            width: 3px;
+            width: 2px;
             height: 100%;
+            top: 0;
         }
 
         .horizontal {
-            height: 3px;
-            width: 0%; /* Start from 0 width */
+            height: 2px;
+            width: 100%;
         }
 
-        .left {
-            left: 0;
-            animation: vertical-line-left-to-right 1s ease-in-out forwards;
+        .left { left: 0; }
+        .right { right: 0; }
+        .top { top: 0; }
+        .bottom { bottom: 0; }
+
+        .meet {
+            background-color: var(--theme-color1);
+            color: var(--theme-color-light);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border: 0;
+            font-weight: 600;
+            font-size: 16px;
+            opacity: 0;
+            animation: fade-in 0.5s ease-in-out forwards;
+            animation-delay: 2.5s;
         }
 
-        .right {
-            right: 0;
-            animation: vertical-line-right-to-left 1s ease-in-out forwards;
+        .hero-img {
+            opacity: 0;
+            animation: zoom-in 1.5s ease-in-out forwards;
+            animation-delay: 1s;
         }
 
-        .top {
-            top: 0;
-            animation: horizontal-line-left-to-right 1s ease-in-out forwards 1.2s; /* Delayed slightly */
+        /* Animations */
+        @keyframes fade-in-move-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .bottom {
-            bottom: 0;
-            animation: horizontal-line-right-to-left 1s ease-in-out forwards 1.2s; /* Starts with the top line */
-        }
-
-        /* Keyframes */
-        @keyframes vertical-line-left-to-right {
-            0% { left: 0; }
-            100% { left: 100%; }
-        }
-
-        @keyframes vertical-line-right-to-left {
-            0% { right: 0; }
-            100% { right: 100%; }
-        }
-
-        @keyframes horizontal-line-left-to-right {
-            0% { width: 0%; left: 0; }
-            100% { width: 100%; left: 0; }
-        }
-
-        @keyframes horizontal-line-right-to-left {
-            0% { width: 0%; right: 0; }
-            100% { width: 100%; right: 0; }
+        @keyframes zoom-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         @keyframes fade-in {
-            to { opacity: 1; }
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-left, .hero-right {
+                min-height: 50vh;
+                height: auto;
+            }
+
+            .title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-right img {
+                width: 100%;
+                margin-left: 0;
+                padding: 1rem;
+            }
+
+            .meet {
+                margin: 1rem auto;
+                display: block;
+                text-align: center;
+            }
+
+            .animated-box {
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .hero-left, .hero-right {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
+
+            .hero-img {
+                margin-top: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="animated-box">
-        <h2 class="title">madhu</h2>
-        <div class="line vertical left"></div>
-        <div class="line vertical right"></div>
-        <div class="line horizontal top"></div>
-        <div class="line horizontal bottom"></div>
+    <div class="container-fluid hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 hero-left">
+                    <div class="animated-box">
+                        <h1 class="title">Smart Solutions</h1>
+                        <p>WE CARE <span style="color: white;">WE DELIVER</span></p>
+                        <div class="line vertical left"></div>
+                        <div class="line vertical right"></div>
+                        <div class="line horizontal top"></div>
+                        <div class="line horizontal bottom"></div>
+                    </div>
+                </div>
+                <div class="col-md-6 hero-right">
+                    <div class="hero-img">
+                        <img src="/api/placeholder/400/400" alt="Hero Image">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
